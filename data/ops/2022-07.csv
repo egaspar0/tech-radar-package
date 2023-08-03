@@ -17,7 +17,7 @@ q3,         Infrastructure
 q4,         Tools and Techniques
 ===
 name,                       quadrant,      ring,   description
-Java,                       langlib,       Adopt,  Обычная Java
+Java,                       langlib,       Adopt,  This <br/> has <br/> <b>HTML</b>
 GoLang,                     langlib,       Assess, Системный язык программирования
 Python 3,                   langlib,       Adopt,  Python
 Flask,                      langlib,       Adopt,

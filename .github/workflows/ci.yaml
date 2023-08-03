@@ -1,0 +1,31 @@
+# This is a Github Workflow that runs tests on any push or pull request.
+name: CI
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install npm
+        run: npm install @qiwi/tech-radar@1.13.14
+
+      - name: Generate
+        run: |
+          yarn generate
+          yarn docs
+
+      - name: Publish gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          commit_message: "docs: update tech-radar static"
+          allow_empty_commit: true
+          enable_jekyll: false

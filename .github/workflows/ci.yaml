@@ -19,8 +19,9 @@ jobs:
       - name: Copy root files
         uses: canastro/copy-file-action@master
         with:
-          source: "./templates/_assets/favicon.ico"
+          source: "./templates/_assets/."
           target: "/dist/"
+          flags: '-r'
 
       - name: Publish gh-pages
         uses: peaceiris/actions-gh-pages@v3

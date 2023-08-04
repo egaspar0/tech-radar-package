@@ -20,7 +20,7 @@ jobs:
         uses: canastro/copy-file-action@master
         with:
           source: "./templates/_assets/favicon.ico"
-          target: "/favicon.ico"
+          target: "/dist/"
 
       - name: Publish gh-pages
         uses: peaceiris/actions-gh-pages@v3

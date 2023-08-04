@@ -16,6 +16,9 @@ jobs:
       - name: Install npm
         run: sudo npx @qiwi/tech-radar@1.13.14 --input "data/**/*.{csv,json,yml}" --output /dist --base-prefix tech-radar --autoscope true --nav-page true --templates "./templates"
 
+      - name: List Dir
+        run : ls -l ${{ github.workspace }}
+
       - name: Copy root files
         uses: canastro/copy-file-action@master
         with:

@@ -20,11 +20,7 @@ jobs:
         run : ls -l ${{ github.workspace }}
 
       - name: Copy root files
-        uses: canastro/copy-file-action@master
-        with:
-          source: "${{ github.workspace }}/."
-          target: "/dist/"
-          flags: '-r'
+        run: cp "${{ github.workspace }}/templates/assets/." "/dist/"
 
       - name: Publish gh-pages
         uses: peaceiris/actions-gh-pages@v3

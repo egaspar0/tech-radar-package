@@ -19,7 +19,7 @@ jobs:
       - name: Copy root files
         uses: canastro/copy-file-action@master
         with:
-          source: "./templates/_assets/."
+          source: "$GITHUB_WORKSPACE/templates/_assets/."
           target: "/dist/"
           flags: '-r'
 

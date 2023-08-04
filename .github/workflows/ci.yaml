@@ -19,8 +19,8 @@ jobs:
       - name: Copy root files
         uses: canastro/copy-file-action@master
         with:
-          source: "/home/runner/work/tech-radar-package/templates/_assets/favicon.ico"
-          target: "/dist/favicon.ico"
+          source: "./templates/_assets/favicon.ico"
+          target: "./dist/favicon.ico"
 
       - name: Publish gh-pages
         uses: peaceiris/actions-gh-pages@v3

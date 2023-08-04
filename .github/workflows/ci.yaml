@@ -20,7 +20,7 @@ jobs:
         run : ls -l ${{ github.workspace }}
 
       - name: Copy root files
-        run: cp "${{ github.workspace }}/templates/assets/." "/dist/"
+        run: cp -r "${{ github.workspace }}/templates/assets/." "/dist/"
 
       - name: Publish gh-pages
         uses: peaceiris/actions-gh-pages@v3

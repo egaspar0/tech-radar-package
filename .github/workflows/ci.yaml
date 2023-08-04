@@ -16,12 +16,6 @@ jobs:
       - name: Install npm
         run: sudo npx @qiwi/tech-radar@1.13.14 --input "data/**/*.{csv,json,yml}" --output /dist --base-prefix tech-radar --autoscope true --nav-page true --templates "./templates"
 
-      - name: Copy root files
-        uses: canastro/copy-file-action@master
-        with:
-          source: "./templates/_assets/favicon.ico"
-          target: "./dist/favicon.ico"
-
       - name: Publish gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -30,3 +24,4 @@ jobs:
           commit_message: "docs: update tech-radar static"
           allow_empty_commit: true
           enable_jekyll: false
+          exclude_assets: 'favicon.ico'

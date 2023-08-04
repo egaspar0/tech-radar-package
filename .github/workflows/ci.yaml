@@ -20,7 +20,7 @@ jobs:
         uses: canastro/copy-file-action@master
         with:
           source: "./templates/_assets/."
-          target: "./dist/"
+          target: "/dist/"
           flags: '-r'
 
       - name: Publish gh-pages
